@@ -37,17 +37,18 @@ dynamic-jwt-authentication/
 ## ⚙️ How to Use
 
 🔐 Token Authentication:
-Copy the printed token from the console:
-==================================================
-NEW RUNTIME TOKEN GENERATED:
-adfhghuqwertgjiuyyhnhuopoiyg...
+
+### Copy the printed token from the console:
+### ==================================================
+### NEW RUNTIME TOKEN GENERATED:
+### adfhghuqwertgjiuyyhnhuopoiyg...
 ==================================================
 
-Copy the token and pass it at Headers of endpoints request body as:
+### Copy the token and pass it at Headers of endpoints request body as:
 ==================================================
-Header of /info endpoint:
-Key                         Value
-Authorization            Bearer adfhghuqwertgjiuyyhnhuopoiyg...
+### Header of /info endpoint:
+### Key                         Value
+### Authorization            Bearer adfhghuqwertgjiuyyhnhuopoiyg...
 ==================================================
 
 ## 🧬 How JWT Token Generation Works
