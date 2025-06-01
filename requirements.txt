@@ -1,0 +1,5 @@
+Flask
+PyJWT
+python-dotenv
+requests
+Flask-CORS #CORS policy
