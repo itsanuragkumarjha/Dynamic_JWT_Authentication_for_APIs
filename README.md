@@ -35,7 +35,9 @@ dynamic-jwt-authentication/
 - Endpoints are protected and only respond to requests with a valid JWT.
 
 ## ⚙️ How to Use
-# 🔐 Token Authentication
+
+#### 🔐 Token Authentication:
+
 Copy the printed token from the console:
 ==================================================
 NEW RUNTIME TOKEN GENERATED:
@@ -50,7 +52,7 @@ Authorization            Bearer adfhghuqwertgjiuyyhnhuopoiyg...
 ==================================================
 
 ## 🧬 How JWT Token Generation Works
-# 🔐 Algorithm Details:
+#### 🔐 Algorithm Details:
 
 Algorithm: HS256 (HMAC + SHA-256)
 
