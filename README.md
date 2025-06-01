@@ -47,8 +47,8 @@ dynamic-jwt-authentication/
 ### Copy the token and pass it at Headers of endpoints request body as:
 ==================================================
 ### Header of /info endpoint:
-### Key                         ### Value
-### Authorization               Bearer adfhghuqwertgjiuyyhnhuopoiyg...
+### Key                         - Value
+### Authorization               - Bearer adfhghuqwertgjiuyyhnhuopoiyg...
 ==================================================
 
 ## 🧬 How JWT Token Generation Works
