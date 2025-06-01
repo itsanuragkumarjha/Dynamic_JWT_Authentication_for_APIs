@@ -1,6 +1,7 @@
 # 🔐 Dynamic JWT Authentication with Flask
 
 A lightweight Flask app showcasing **dynamic JWT-based authentication** for securing API endpoints — with tokens generated uniquely every time the app runs.
+Any API that requires authentication can easily switch over to JWT's authorization. With JWT authorization, you get a user-based authentication. Once the user is authenticated, the user gets a secure token that they can use on all systems. The management of the user (and therefore the token) is centralized.
 
 > 🧠 Perfect for learning how to implement secure, stateless authentication for your own Python APIs.
 
