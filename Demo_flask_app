@@ -1,0 +1,73 @@
+import requests
+import json
+import sys
+
+# ==============================
+# CONFIGURATION
+# ==============================
+
+BASE_URL = "http://xxx.x.x.x:port"  # Your Flask server address
+TOKEN = "<PASTE_YOUR_RUNTIME_TOKEN_HERE>"  # Copy the token printed in the app.py console
+
+HEADERS = {
+    "Authorization": f"Bearer {TOKEN}"
+}
+
+# Data to send to /info endpoint
+info_payload = {
+    "input_s3_path": "s3://sample-bucket/data.csv",
+    "DB_HOST": "localhost",
+    "DB_NAME": "exampledb",
+    "DB_USER": "exampleuser",
+    "DB_PASSWORD": "examplepassword",
+    "DB_PORT": "port"
+}
+
+# ==============================
+# FUNCTION TO CALL /info
+# ==============================
+
+def send_info():
+    try:
+        print("\n➡️  Sending POST request to /info ...")
+        response = requests.post(f"{BASE_URL}/info", json=info_payload, headers=HEADERS)
+
+        print("🔄 Status Code:", response.status_code)
+        print("📦 Response:", response.text)
+
+        if response.status_code != 200:
+            print("❌ Failed to set info. Check token or payload.")
+            sys.exit(1)
+    except Exception as e:
+        print(f"❌ Exception occurred while sending /info: {e}")
+        sys.exit(1)
+
+# ==============================
+# FUNCTION TO CALL /run
+# ==============================
+
+def trigger_run():
+    try:
+        print("\n➡️  Sending GET request to /run ...")
+        response = requests.get(f"{BASE_URL}/run", headers=HEADERS)
+
+        print("🔄 Status Code:", response.status_code)
+        print("📦 Response:\n", response.text)
+
+        if response.status_code != 200:
+            print("❌ Failed to run script. Check if info was sent first and token is valid.")
+    except Exception as e:
+        print(f"❌ Exception occurred while calling /run: {e}")
+
+# ==============================
+# MAIN
+# ==============================
+
+if __name__ == "__main__":
+    print("📘 Dynamic JWT Authentication Demo\n")
+    if "<PASTE_YOUR_RUNTIME_TOKEN_HERE>" in TOKEN:
+        print("⚠️ Please replace the TOKEN variable with the actual runtime token printed in app.py.")
+        sys.exit(1)
+
+    send_info()
+    trigger_run()
